@@ -2,6 +2,9 @@
 
 <input type="text" placeholder="Input here..." #val>
 <button (click)="SubmitValue(val)">Submit Value</button>
+<button (click)="toggleChild()">
+  {{ showChild ? 'Destroy Child' : 'Create Child' }}
+</button>
 
 <br><br>
-<app-child [inputValue]="value"></app-child>
+<app-child *ngIf="showChild" [inputValue]="value"> Content </app-child>

@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ParentComponent implements OnInit {
   value: string = '';
+  showChild: boolean = true;
 
   constructor() { }
 
@@ -15,5 +16,9 @@ export class ParentComponent implements OnInit {
 
   SubmitValue(val: HTMLInputElement) {
     this.value = val.value;
+  }
+
+  toggleChild(): void {
+    this.showChild = !this.showChild;
   }
 }
